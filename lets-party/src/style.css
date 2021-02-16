@@ -11,6 +11,8 @@ html {
 /* basic fonts and colors */
 html {
   font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  line-height: 30px;
   background-color: #111;
   color: #eee;
 }
@@ -36,7 +38,7 @@ header {
 
 main,
 .sidebar {
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
 }
 
 main {
@@ -96,8 +98,38 @@ h2 {
   font-size: 40px;
   line-height: 60px;
 }
+h3,
+.when-where,
+.catchphrase {
+  font-size: 30px;
+  line-height: 40px;
+}
+h3 {
+  margin: 0;
+}
+p {
+  margin: 10px 0;
+}
 main > h2 {
   font-size: 80px;
   line-height: 120px;
   color: yellow;
+}
+/* even though all a’s and li’s on this page follow these rules,
+   I try to be specific, so I don’t overwrite a styles on other
+   pages. */
+.when-where a,
+.line-up a,
+.going a,
+.sidebar a {
+  color: #eee;
+  text-decoration: none;
+}
+.line-up ul,
+.line-up li,
+.going ul,
+.going li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
