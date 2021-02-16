@@ -78,11 +78,6 @@ footer {
   line-height: 40px;
 }
 
-.site-nav a {
-  color: #eee;
-  text-decoration: none;
-}
-
 /* Typography */
 h1,
 h2 {
@@ -118,6 +113,7 @@ main > h2 {
 /* even though all a’s and li’s on this page follow these rules,
    I try to be specific, so I don’t overwrite a styles on other
    pages. */
+.site-nav a,
 .when-where a,
 .line-up a,
 .going a,
@@ -125,6 +121,24 @@ main > h2 {
   color: #eee;
   text-decoration: none;
 }
+
+/* hover interaction for the links */
+.site-nav li:hover,
+.when-where a:hover,
+.line-up a:hover,
+.going a:hover,
+.sidebar a:hover,
+.sidebar a:hover article {
+  background-color: #eee;
+  color: #111;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.site-nav li:hover a {
+  color: #111;
+  transition: color 0.3s;
+}
+
 .line-up ul,
 .line-up li,
 .going ul,
