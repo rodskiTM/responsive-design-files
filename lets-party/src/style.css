@@ -8,15 +8,18 @@ html {
   box-sizing: inherit;
 }
 
-/* basic colors and borders */
+/* basic fonts and colors */
 html {
+  font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
   background-color: #111;
   color: #eee;
 }
 
+/* borders */
 body,
 main,
-.sidebar {
+.sidebar,
+.site-nav li {
   border: 1px solid #eee;
 }
 
@@ -38,17 +41,63 @@ main,
 
 main {
   float: left;
-  width: 680px;
-  margin: 3px 0 20px 0; /* 3 pixels top margin otherwise alignment is off
-                           by 3px for some reason (typical float problem) */
+  width: 700px;
+  margin: 0 0 20px 0; /* 3 unnecessary when navbar is styled */
 }
 
 .sidebar {
-  margin: 20px 0 20px 720px;
+  margin: 20px 0 20px 740px;
 }
 
 footer {
   clear: both;
   margin-top: 20px;
   text-align: right;
+}
+
+/* nav-bar */
+.site-nav {
+  margin: 20px 0;
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.site-nav a {
+  color: #eee;
+  text-decoration: none;
+}
+
+/* Typography */
+h1,
+h2 {
+  font-family: Monoton, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+h1 {
+  font-size: 60px;
+  line-height: 80px;
+}
+h2 {
+  font-size: 40px;
+  line-height: 60px;
+}
+main > h2 {
+  font-size: 80px;
+  line-height: 120px;
+  color: yellow;
 }
