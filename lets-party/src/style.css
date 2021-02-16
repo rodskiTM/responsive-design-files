@@ -1,0 +1,54 @@
+/* border-box forever */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* basic colors and borders */
+html {
+  background-color: #111;
+  color: #eee;
+}
+
+body,
+main,
+.sidebar {
+  border: 1px solid #eee;
+}
+
+/* layout (position, size, margin, padding of section elements */
+body {
+  width: 1280px;
+  margin: 40px auto;
+  padding: 0 40px;
+}
+
+header {
+  width: 100%;
+}
+
+main,
+.sidebar {
+  padding: 0 20px;
+}
+
+main {
+  float: left;
+  width: 680px;
+  margin: 3px 0 20px 0; /* 3 pixels top margin otherwise alignment is off
+                           by 3px for some reason (typical float problem) */
+}
+
+.sidebar {
+  margin: 20px 0 20px 720px;
+}
+
+footer {
+  clear: both;
+  margin-top: 20px;
+  text-align: right;
+}
