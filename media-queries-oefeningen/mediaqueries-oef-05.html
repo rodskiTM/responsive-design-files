@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Fixed Width Layout</title>
     <style type="text/css">
       * {
@@ -35,8 +40,7 @@
       .column2,
       .column3 {
         background-color: #efefef;
-        width: 31.3%;
-        float: left;
+        width: 98%;
         margin: 1%;
         padding: 1%;
         box-sizing: border-box;
@@ -44,35 +48,94 @@
 
       li a {
         text-decoration: none;
+        color: white;
       }
+
       li a:hover {
-        color: #270d5c;
+        color: yellow;
         background-color: white;
       }
 
+      ul {
+        padding: 0;
+      }
       li {
-        display: inline;
+        display: block;
         padding: 5px;
-        border-style: double;
-        background-color: #00cc33;
+        border-style: none;
+        background-color: black;
+      }
+
+      #nav_header {
+        display: none;
+        background-color: black;
+        color: white;
+      }
+
+      .header a.icon {
+        background: black;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 10px;
       }
 
       .footer {
         text-align: right;
         text-transform: capitalize;
       }
+
+      @media screen and (min-width: 621px) {
+        li {
+          display: inline;
+          padding: 5px;
+          border-style: double;
+          background-color: #00cc33;
+        }
+
+        li a {
+          text-decoration: none;
+        }
+
+        li a:hover {
+          color: #270d5c;
+          background-color: white;
+        }
+
+        #nav_header {
+          display: inline;
+        }
+
+        .header a.icon {
+          display: none;
+        }
+
+        .column1,
+        .column2,
+        .column3 {
+          width: 31.3%;
+          float: left;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="header">
+    <div id="header" class="header">
       <h1>Logo</h1>
-      <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Producten</a></li>
-        <li><a href="">Services</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
+      <div>
+        <ul id="nav_header">
+          <li><a href="">Home</a></li>
+          <li><a href="">Producten</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+        <!-- of alternatief voor hamburger -->
+        <!-- <span>&#9776;</span>-->
+      </a>
     </div>
 
     <div class="content">
@@ -155,5 +218,16 @@
         <p class="footer">&copy; Copyright 2019</p>
       </div>
     </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("nav_header");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>
