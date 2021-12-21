@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Parent Float - Solution</title>
     <style type="text/css">
       body {
@@ -11,24 +12,32 @@
 
       .boord {
         border: 1px groove #665544;
-
         background-color: #00cc33;
       }
 
-      p {
-        width: 30%;
-        float: left;
-        margin: 1%;
+      @media screen and (max-width: 620px) {
+        p {
+          width: 94%;
+          margin: 1%;
+          display: block;
+          float: none;
+        }
       }
 
-      .clearfix::before,
-      .clearfix::after {
-        content: " ";
-        display: table;
-      }
-
-      .clearfix::after {
-        clear: both;
+      @media screen and (min-width: 621px) {
+        p {
+          width: 30%;
+          float: left;
+          margin: 1%;
+        }
+        .clearfix::before,
+        .clearfix::after {
+          content: " ";
+          display: table;
+        }
+        .clearfix::after {
+          clear: both;
+        }
       }
     </style>
   </head>
