@@ -10,26 +10,18 @@
         font-family: Arial, Verdana, sans-serif;
         color: #665544;
       }
-
-      @media screen and (max-width: 620px) {
-        .column1of2 {
-          width: 95%;
-          margin: 2.5%;
-        }
-
-        .column2of2 {
-          width: 95%;
-          margin: 2.5%;
-        }
+      .column1of2,
+      .column2of2 {
+        float: left;
+        width: 100%;
       }
-      @media screen and (min-width: 621px) {
+
+      @media screen and (min-width: 620px) {
         .column1of2 {
-          float: left;
           width: 60%;
         }
 
         .column2of2 {
-          float: left;
           width: 30%;
         }
       }
