@@ -7,21 +7,19 @@
       h3 {
         width: 100%;
       }
-
       body {
         width: 100%;
         font-family: Arial, Verdana, sans-serif;
         color: #665544;
       }
-
       .column1of4,
       .column2of4,
       .column3of4,
       .column4of4 {
-        width: 90%;
-        margin: 1.5%;
-        float: left;
         box-sizing: border-box;
+        float: left;
+        width: 97%;
+        margin: 1.5%;
       }
 
       @media screen and (min-width: 780px) {
@@ -29,20 +27,7 @@
         .column2of4,
         .column3of4,
         .column4of4 {
-          width: 47%;
-          float: left;
-          margin: 1.5%;
-          box-sizing: border-box;
-        }
-
-        .rij1::before,
-        .rij1::after {
-          content: " ";
-          display: table;
-        }
-
-        .rij1::after {
-          clear: both;
+          width: 44%;
         }
       }
 
@@ -52,21 +37,10 @@
         .column3of4,
         .column4of4 {
           width: 22%;
-          float: left;
-          margin: 1.5%;
-          box-sizing: border-box;
-        }
-        .rij1::before,
-        .rij1::after {
-          content: " ";
-          display: block;
-        }
-
-        .rij1::after {
-          clear: none;
         }
       }
 
+      /* Utility classes */
       .clearfix::before,
       .clearfix::after {
         content: " ";
