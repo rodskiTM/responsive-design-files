@@ -16,13 +16,9 @@
         border-radius: 10px;
       }
 
-      .clearfix::before,
-      .clearfix::after {
-        content: " ";
+      .clearfix:after {
+        content: "";
         display: table;
-      }
-
-      .clearfix::after {
         clear: both;
       }
 
@@ -36,57 +32,59 @@
       }
 
       .topnav a {
+        display: block;
         color: white;
         padding: 1em 1em;
         text-decoration: none;
       }
 
-      /* Meer inspiratie : https://www.digitaldesignjournal.com/best-hamburger-menu-css/ */
-
-      @media only screen and (max-width: 760px) {
-        .topnav #myLinks {
-          display: none;
-        }
-
-        .topnav a {
-          display: block;
-        }
-
-        .topnav a.icon {
-          background: black;
-          display: block;
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
-
-        .topnav a:hover {
-          background-color: #ddd;
-          color: black;
-        }
+      .topnav ul {
+        margin: 0;
+        padding: 0;
       }
 
-      @media only screen and (min-width: 761px) {
+      .topnav li {
+        list-style: none;
+      }
+
+      .topnav .logo {
+        float: left;
+      }
+
+      .topnav #myLinks {
+        display: none;
+        clear: left;
+      }
+
+      .topnav a.icon {
+        background: black;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      @media only screen and (min-width: 760px) {
         .topnav #myLinks {
           /* Voor het geval het menu hidden was op het kleinere scherm : display: block */
           display: block;
           margin: 0 20px 0 10px;
+          clear: none;
           /* rechts floaten */
           float: right;
         }
 
-        .topnav a {
-          /* verander de display om en hou het menu even hoog */
-          display: inline-flex;
+        .topnav li {
+          display: inline-block;
         }
 
         .topnav a.icon {
-          background: black;
-          /* Het is niet nodig dat het hamburger icon wordt getoond. display : none */
           display: none;
-          position: absolute;
-          right: 0;
-          top: 0;
         }
 
         .topnav a:hover {
@@ -98,19 +96,19 @@
   </head>
   <body>
     <!-- Top Navigation Menu -->
-    <div class="clearfix topnav">
-      <a href="#home" class="active logo">Logo</a>
-      <div id="myLinks">
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-      </div>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <nav class="clearfix topnav">
+      <ul>
+        <li class="logo active"><a href="#home">Logo</a></li>
+        <div id="myLinks">
+          <li class="nav-link"><a href="#news">News</a></li>
+          <li class="nav-link"><a href="#contact">Contact</a></li>
+          <li class="nav-link"><a href="#about">About</a></li>
+        </div>
+      </ul>
+      <a href="javascript:void(0);" class="icon" onclick="navToggle()">
         <i class="fa fa-bars"></i>
-        <!-- of alternatief voor hamburger -->
-        <!-- <span>&#9776;</span>-->
       </a>
-    </div>
+    </nav>
 
     <div class="clearfix">
       <h3>Vertical Mobile Navbar</h3>
@@ -127,7 +125,7 @@
     <!-- End smartphone / tablet look -->
 
     <script>
-      function myFunction() {
+      function navToggle() {
         var x = document.getElementById("myLinks");
         if (x.style.display === "block") {
           x.style.display = "none";
