@@ -28,17 +28,15 @@
           <div class="col-12 col-lg-6 mb-3">
             <label for="email" class="form-label">E-mail</label>
             <input type="email" id="email" class="form-control" />
-            <div class="form-text" id="email-help">
-              We delen jouw e-mail nooit.
-            </div>
+            <p class="form-text" id="email-help">We delen jouw e-mail nooit.</p>
           </div>
           <div class="d-none d-lg-block col-lg-6"></div>
           <div class="col-12 col-lg-6 mb-3">
             <label for="password" class="form-label">Paswoord</label>
             <input type="password" id="password" class="form-control" />
-            <div class="form-text" id="password-help">
+            <p class="form-text" id="password-help">
               Min. 8 karakters; hoofdletter, cijfer, speciale tekens.
-            </div>
+            </p>
           </div>
           <div class="col-12 col-lg-6 mb-3">
             <label for="password-2" class="form-label">Bevestig paswoord</label>
@@ -46,7 +44,11 @@
           </div>
           <div class="col-12 col-lg-6 mb-3">
             <label for="question-type">Soort vraag</label>
-            <select class="form-select" aria-label="Soort vraag">
+            <select
+              id="question-type"
+              class="form-select"
+              aria-label="Soort vraag"
+            >
               <option selected value="Common">Algemeen</option>
               <option value="Sale">Aankoop</option>
               <option value="Complaint">Klacht</option>
