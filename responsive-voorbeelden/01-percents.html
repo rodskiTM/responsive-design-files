@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percenten voorbeeld</title>
+    <style>
+      /* Voor het gemak werken we weer even met style blocks. 
+         In het echt doen we dat uiteraard niet */
+
+      /* alleen ondermarges, als de browser standaard horizontale marges 
+      heeft ingesteld past alles niet naast elkaar */
+      * {
+        margin: 0 0 20px 0;
+        padding: 0;
+      }
+
+      /* achtergrondkleurtje zodat we het effect van een niet gedefinieerde
+      width kunnen zien. */
+      h1 {
+        background-color: gold;
+      }
+
+      /* zodat alles naast elkaar staat */
+      aside,
+      main {
+        float: left;
+      }
+
+      /* percents everywhere */
+      .sidebar-left {
+        width: 20%;
+      }
+      main {
+        width: 55%;
+      }
+      .sidebar-right {
+        width: 25%;
+      }
+      .half {
+        width: 50%;
+      }
+
+      /* Test eens wat er gebeurt als je deze regel verwijdert.
+      Waarom gebeurt dat? */
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="sidebar-left">
+      <h2>Links</h2>
+      <p>Deze sidebar heeft een breedte van 20%.</p>
+      <figure class="half">
+        <img src="https://placekitten.com/500" alt="kitty" />
+        <caption>
+          Deze figure heeft een breedte van 50%. De caption binnen de figure dus
+          ook.
+        </caption>
+      </figure>
+      <p>
+        Een pargraaf tekst neemt standaard 100% van de beschikbare breddte in.
+        Dat geldt trouwens voor de meeste block elementen.
+      </p>
+    </aside>
+    <main>
+      <h1>Werken met percenten</h1>
+      <p>
+        Percenten zijn relatief ten opzichte van hun parent. (Om precies te zijn
+        ten opzichte van de eerste voorouder die een breedte of hoogte heeft.)
+      </p>
+      <p>
+        Je merkt op dat de figures een verschillende absolute breedte hebben.
+        Hun parent containers (i.c. aside of main) hebben verschillende
+        breedtes. De figures nemen telkens de helft van de beschikbare breedte
+        in.
+      </p>
+      <p>
+        Tussen haakjes: voor de h1 werd geen breedte ingesteld via de CSS;
+        dankzij de achtergrondkleur kan je zien dat de volledige beschikbare
+        breedte wordt ingenomen: hetzelfde resultaat als wanneer we
+        <code>width: 100%;</code> hadden opgegeven.
+      </p>
+      <figure class="half">
+        <img src="https://placekitten.com/800" alt="kitty" />
+        <caption>
+          Deze figure heeft een breedte van 50%. De caption binnen de figure dus
+          ook.
+        </caption>
+      </figure>
+    </main>
+    <aside class="sidebar-right">
+      <h2>Rechts</h2>
+      <p>Deze sidebar heeft een breedte van 25%.</p>
+      <figure class="half">
+        <img src="https://placekitten.com/700" alt="kitty" />
+        <caption>
+          Deze figure heeft een breedte van 50%. De caption binnen de figure dus
+          ook.
+        </caption>
+      </figure>
+      <p>
+        Een pargraaf tekst neemt standaard 100% van de beschikbare breddte in.
+        Dat geldt trouwens voor de meeste block elementen.
+      </p>
+    </aside>
+  </body>
+</html>
