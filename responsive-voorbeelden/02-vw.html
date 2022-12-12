@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vw example</title>
+    <style>
+      /* Voor het gemak werken we met een style block ipv een extern CSS bestand */
+      /* Ik geef alle onderdelen duidelijke achtergrondkleuren, zo zie je meteen
+         hun breedte */
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .ruler li {
+        list-style: none;
+        float: left;
+        width: 10vw;
+        border-right: 1px solid black;
+        text-align: center;
+      }
+
+      header {
+        clear: both;
+        width: 80vw; /* 80% zou hetzelfde effect hebben */
+        margin: 0 auto;
+        background-color: aqua;
+      }
+      .site-title {
+        margin: 1em auto;
+        line-height: 1em;
+        width: 60vw; /* 60% van de viewport breedte - in % zou dit
+                          al een hele berekening worden */
+        background-color: brown;
+      }
+      .site-nav {
+        background-color: lime;
+      }
+      .site-nav ul {
+        text-align: right;
+        list-style: none;
+        background-color: lightcoral;
+      }
+      .site-nav li {
+        display: inline-block;
+        width: 10vw; /* elk item 10% van de viewport */
+        background-color: deeppink;
+      }
+      main {
+        width: 40vw;
+        margin: 0 auto;
+        background-color: darkcyan;
+      }
+      .absolute-third {
+        width: 33vw;
+        height: 33vh;
+        background-color: rebeccapurple;
+      }
+      .text {
+        padding: 0.33em;
+        background-color: #111;
+        color: #eee;
+      }
+      .hundred {
+        width: 100vw;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ruler">
+      <li class="tenth">1</li>
+      <li class="tenth">2</li>
+      <li class="tenth">3</li>
+      <li class="tenth">4</li>
+      <li class="tenth">5</li>
+      <li class="tenth">6</li>
+      <li class="tenth">7</li>
+      <li class="tenth">8</li>
+      <li class="tenth">9</li>
+      <li class="tenth">10</li>
+    </div>
+    <header>
+      <h1 class="site-title">vw &amp; vh example</h1>
+      <nav class="site-nav">
+        <ul>
+          <li class="nav-item"><a href="#" class="nav-button">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-button">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-button">Music</a></li>
+          <li class="nav-item"><a href="#" class="nav-button">Concerts</a></li>
+          <li class="nav-item">
+            <a href="#" class="nav-button">Merchandise</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Welcome to the VW’s</h2>
+      <p class="absolute-third">
+        vw’s zijn percenten van de viewport. Deze paragraaf heeft een breedte
+        van 33vw en een hoogte van 33vh.
+      </p>
+      <p class="text">
+        Deze paragraaf heeft geen eigen breedte en krijgt dus de breedte van
+        zijn parent (zelfde als 100%). Bovenaan hebben we een soort meetlat
+        waarmee we de viewport in tien gelijke delen opdelen. Bekijk de CSS om
+        te zien hoe we dit gedaan hebben.
+      </p>
+      <p class="text">
+        Met inline block zoals in de nav krijg ik een spookpixel in mijn browser
+        (Chrome macOS) (je ziet de achtergrondkleur van de ul tussen de li’s).
+        Hebben jullie dat ook?
+      </p>
+      <p class="hundred">
+        Deze pragraaf heeft een breedte van 100vw en past bijgevolg niet in zijn
+        parent. <br />Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Quae veritatis alias dolorum amet temporibus minima, nemo quisquam qui
+        totam possimus, voluptatem molestiae deleniti odit, id excepturi
+        mollitia animi dolores quod?
+      </p>
+    </main>
+  </body>
+</html>
