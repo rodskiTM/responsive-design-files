@@ -9,6 +9,9 @@
       body {
         font-size: 20px;
       }
+      article {
+        font-size: 12px;
+      }
       h1 {
         font-size: 3em;
       }
@@ -21,6 +24,9 @@
       strong,
       .one-and-a-half {
         font-size: 1.5em;
+      }
+      .smalltitle {
+        font-size: 1.2em;
       }
       .twenty-em {
         width: 20em;
@@ -47,15 +53,25 @@
       font-size opgeven erven die font-size (inheritance).
     </p>
     <p>
-      Dit is een pargraaf met <code>font-size: 1em.</code>
+      Dit is een paragraaf met <code>font-size: 1em;</code>
       <strong
         >En dit is een strong van 1.5em binnen diezelfde paragraaf.</strong
       >
     </p>
     <p>
-      Je ziet hierboven dat em bij font-size de factor bepaalt waarmee je de
+      Je ziet hierboven dat em bij font-size de factor bepaalt waarmee je de de
       font-size van het parent element moet vermenigvuldigen.
     </p>
+    <article>
+      <h2>Article: h2 van em (hier 24px)</h2>
+      <p>
+        Voor article hebben we <code>font-size: 12px;</code> ingesteld. Dat
+        betekent dat een pargraaf hier een font-size van 12px erft (inheritance)
+        en dat een h2 van 2em hier 24px groot is (font-size van het parent
+        element vermenigvuldigd met een factor 2).
+      </p>
+    </article>
+    <h2>em’s voor andere maten dan font-size</h2>
     <p>
       Hieronder zie je dat em’s voor andere maten, zoals width de factor bepalen
       waarmee je de font-size van het element zelf moet vermenigvuldigen.
