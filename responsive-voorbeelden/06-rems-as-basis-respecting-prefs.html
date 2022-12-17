@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rem als basismaat met respect voor user preferences</title>
+    <style>
+      html {
+        font-size: 1.2em; /* iets groter dan browser default voor een modern design */
+        box-sizing: border-box;
+        background-color: white;
+      }
+      /* universal border-box per https://css-tricks.com/box-sizing/ */
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        width: 42rem;
+        margin: 1rem auto;
+        padding: 1rem;
+        background-color: coral;
+      }
+      main,
+      aside {
+        padding: 1rem;
+        float: left;
+        background-color: #bbb;
+      }
+      img {
+        max-width: 100%;
+      }
+      main {
+        width: 29rem;
+        margin-right: 1rem;
+      }
+      main figure {
+        width: 13rem;
+        margin: 0 1rem 0 0;
+        float: left;
+        background-color: cornflowerblue;
+      }
+
+      /* denk zelf even na over het nut van de onderstaande regel */
+      main figure:last-child {
+        margin-right: 0;
+      }
+      h1,
+      h2 {
+        margin: 0;
+      }
+      .right-bar {
+        width: 10rem;
+      }
+      /* clearfix leggen we later uit */
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    </style>
+  </head>
+  <body class="clearfix">
+    <main>
+      <h1>rem als basismaat met respect voor user preferences</h1>
+      <p>
+        Als we een pagina opbouwen met rem als basismaat, hebben we vanzelf al
+        een stukje responsiviteit. Hier stellen we het font-size voor het
+        html-element in op 1.2em: met andere woorden 20% groter dan wat
+        standaard ingesteld staat voor de combinatie van deze gebruiker, browser
+        en operating system. We zouden ook 1em of 100% (of niets) kunnen
+        gebruiken, maar in modern design hebben we onze lettertypes meestal
+        liefst wat groter.
+      </p>
+      <p>
+        De body heeft een breedte van 42rem. Deze main heeft een breedte van
+        29rem en een rechtermarge van 1rem (fungeert als gutter tussen de main
+        en de aside).
+      </p>
+      <p>
+        Test nu zelf wat er gebeurt als je de font-size van het html-element
+        aanpast. (Dat kan gewoon in de inspector.)
+      </p>
+      <figure>
+        <img src="https://placekitten.com/450/450" alt="kitty 1" />
+        <figcaption>Kitten 1</figcaption>
+      </figure>
+      <figure>
+        <img src="https://placekitten.com/300/300" alt="kitty 2" />
+        <figcaption>Kitten 2</figcaption>
+      </figure>
+    </main>
+    <aside class="right-bar">
+      <h2>side</h2>
+      <p>Deze sidebar heeft een breedte van 10rem.</p>
+    </aside>
+  </body>
+</html>
