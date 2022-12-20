@@ -16,8 +16,28 @@
         box-sizing: inherit;
       }
 
+      /* image blocks zie uitleg in de tekst */
       img {
         display: block;
+      }
+
+      /* instellen van de breedtes */
+      .too-wide {
+        width: 2400px;
+      }
+      .onehundredpercent {
+        width: 100%;
+      }
+      .readable {
+        max-width: 50rem;
+        margin: 1rem auto;
+      }
+      .maxhundred {
+        max-width: 100%;
+      }
+
+      /* spacing */
+      img {
         margin: 0 0 1rem 0;
       }
       article {
@@ -28,32 +48,22 @@
         margin: 0 0 2rem 0;
         padding: 0;
       }
-      .too-wide {
-        width: 2400px;
-      }
+
+      /* kleurtjes */
       .aqua {
         background-color: aqua;
-      }
-      .onehundredpercent {
-        width: 100%;
       }
       .coral {
         background-color: coral;
       }
-      .readable {
-        max-width: 50rem;
-        margin: 1rem auto;
-      }
       .lavender {
         background-color: lavender;
-      }
-      .maxhundred {
-        max-width: 100%;
       }
     </style>
   </head>
   <body>
     <h1>max-width</h1>
+    <p>Bekijk deze pagina ook zeker op verschillende breedtes.</p>
     <article class="too-wide aqua">
       <h2>Dit article is veel te breed voor de meeste viewports</h2>
       <p>
@@ -114,8 +124,8 @@
         <img src="https://place-puppy.com/2000x1000" alt="puppy" />
         <caption>
           Hier laden we dezelfde image van 2000px breed. Omdat we vergeten de
-          image zelf een breedte van 100% te geven, past ze niet in het parent
-          element en hebben we dus een overflow.
+          image zelf een breedte van 100% te geven, past ze op de meeste
+          viewports niet in het parent element en hebben we dus een overflow.
         </caption>
       </figure>
       <figure class="onehundredpercent">
@@ -142,11 +152,12 @@
         instellen.
       </p>
       <p>
-        Een breedte van tussen de 40rem en 50rem zal bij de meeste lettertypes
-        overeenkomen met 50 - 80 tekens, wat dus ideaal is voor de readability.
-        Deze lijn wordt dus op geen enkel scherm te lang om aangenaam te kunnen
-        lezen. Bovendien zal een gebruiker om dit article te lezen nooit
-        horizontaal moeten scrollen. Het beste van twee werelden dus.
+        Waarom 45rem? Een breedte van tussen de 40rem en 50rem zal bij de meeste
+        lettertypes overeenkomen met 50 - 80 tekens, wat dus ideaal is voor de
+        readability. Deze lijn wordt dus op geen enkel scherm te lang om
+        aangenaam te kunnen lezen. Bovendien zal een gebruiker om dit article te
+        lezen nooit horizontaal moeten scrollen. Het beste van twee werelden
+        dus.
       </p>
       <figure>
         <img
