@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bad vertical</title>
+    <style>
+      /* universal border-box per https://css-tricks.com/box-sizing/ */
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      article {
+        margin: 2rem auto;
+        padding: 1rem;
+        line-height: 1.2rem;
+        max-width: 35rem;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .too-short {
+        height: 9.2rem;
+      }
+
+      .too-long {
+        height: 48rem;
+      }
+
+      .coral {
+        background-color: coral;
+      }
+      .aqua {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Slecht gebruik van de verticale dimensie</h1>
+    <article class="too-short coral">
+      <p>
+        We geven dit article een hoogte van 9.2rem en een padding van 1rem langs
+        alle kanten. Er passen met een line-height van 1.2rem net 6 lijnen tekst
+        onder elkaar. Deze tekst is niet heel erg lang en past dus netjes binnen
+        dit article. Op mijn scherm toch. We hebben zelfs nog een halve lijn
+        reserve voor wanneer we op een wat kleinere viewport zitten. Bekijk toch
+        maar eens wat er gebeurt op een smalle viewport. En wat als de eigenaar
+        nog een paar woorden wil toevoegen?
+      </p>
+    </article>
+    <article class="too-long aqua">
+      <h2>Dan maar wat reserve</h2>
+      <p>
+        ‘Mij gaan ze niet liggen hebben,’ dacht de kleine webdeveloper op een
+        regenachtige herfstdag en hij zorgde dat er voldoende plaats was. Als
+        die eigenaar van de webshop via ons prachtige content management systeem
+        een heel sprookje in dit article wil schrijven, doet hij maar. Ik
+        voorzie lekker 48rem in de hoogte. Daar krijgen zij wel 40 lijnen tekst
+        in.
+      </p>
+    </article>
+    <p>
+      Lang hè?<br />
+      Waarom deze moeite doen. De hoogte van deze elementen past zich wel aan de
+      inhoud aan.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clearfix voorbeelden</title>
+    <style>
+      /* universal border-box per https://css-tricks.com/box-sizing/ */
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      article {
+        max-width: 40rem;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+
+      aside {
+        width: 25%;
+        margin: 0 5% 0 0;
+        padding: 0.5rem;
+        font-size: 0.8rem/1rem;
+      }
+      main {
+        width: 70%;
+        margin: 0;
+        padding: 1rem;
+        font-size: 1rem/1.2rem;
+      }
+      p,
+      h2 {
+        margin: 0 0 1.2rem 0;
+      }
+
+      .float {
+        float: left;
+      }
+
+      .high {
+        height: 14rem;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      /* https://css-tricks.com/snippets/css/clear-fix/ */
+      .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .purple {
+        background-color: rebeccapurple;
+      }
+      .coral {
+        background-color: coral;
+      }
+      .aqua {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Clearfix</h1>
+    <article class="purple">
+      <aside class="float aqua">
+        Ook articles kunnen een aside hebben. Dat wisten jullie natuurlijk al
+        lang.
+      </aside>
+      <main class="float coral">
+        <h2>Waar is dat article?</h2>
+        <p>
+          En articles kunnen zelfs een main hebben. Headers en footers kunnen
+          ook perfect binnen een article.
+        </p>
+        <p>
+          Dat is natuurlijk niet waar het hierom gaat. Het gaat hier om het
+          mysterie van het verdwenen paars. Het article waarbinnen we deze main
+          en aside hebben, heeft een paarse achtergrond. Het lijkt wel of dit
+          article geen inhoud heeft. Kijk maar eens in de inspector wat de
+          height van het article is. Als er geen padding was, zagen we helemaal
+          geen paars.
+        </p>
+        <p>
+          Wie herinnert zich nog dat we als we een element laten floaten we het
+          uit de normale flow halen. Het lijkt wel alsof het geen ruimte meer
+          heeft.
+        </p>
+        <p>
+          Ons article heeft enkel child elements die floaten en het lijkt dus
+          alsof het geen inhoud heeft voor de rest.
+        </p>
+      </main>
+    </article>
+    <div class="clear">
+      Deze div bestaat alleen om de floats hierboven te clearen. En met een
+      schone lei te floaten.
+    </div>
+    <article class="high purple">
+      <aside class="float aqua">Nog zo’n aside binnen een article.</aside>
+      <main class="float coral">
+        <h2>Hoogte</h2>
+        <p>
+          Dan geven we het article toch gewoon een hoogte? Haha. Het vorige
+          voorbeeld vergeten zeker? Gaan we dan testen hoe hoog? Voor elke
+          mogelijke viewport. Ik probeer eens met 14rem. Op mijn monitor lijkt
+          alles nu oke. Kijk toch maar wat er gebeurt. Op verschillende viewport
+          breedtes.
+        </p>
+      </main>
+    </article>
+    <article class="purple">
+      <aside class="float aqua">Nog zo’n aside binnen een article.</aside>
+      <main class="float coral">
+        <h2>Clearen met een lege div</h2>
+        <p>
+          We kunnen dit oplossen door een extra child element toe te voegen aan
+          ons article dat we dwingen om onder alle floats te komen.
+        </p>
+        <p>
+          Hoe deden we dat alweer? Met <code>clear: both;</code> natuurlijk.
+        </p>
+        <p>
+          Dat child element neemt volgens de browser wel ruimte in binnen het
+          article en duwt zo de onderkant van het article mee naar beneden.
+        </p>
+      </main>
+      <div class="clear"></div>
+    </article>
+    <article class="clearfix purple">
+      <aside class="float aqua">Nog zo’n aside binnen een article.</aside>
+      <main class="float coral">
+        <h2>Clearfix</h2>
+        <p>
+          Alleen. Een leeg element. Dat enkel bestaat om een visueel
+          CSS-probleem op te lossen!? Waar is de semantics police? Dat gaan we
+          dus niet doen.
+        </p>
+        <p>
+          Wat doen we dan wel? We voegen een klasse clearfix toe aan elk parent
+          element met floatende kinderen en waarvan de hoogte moet meegroeien om
+          plaats te voorzien voor die kinderen. Met de clearfix klasse voegen we
+          aan het einde van dit element via CSS een lege tekst in. Die geven we
+          display table (omdat anders sommige browsers lastig doen) en clearen
+          we in beide richtingen.
+        </p>
+        <p>
+          Het resultaat is hetzelfde als in het vorige voorbeeld. Er is een
+          element dat niet float en dat dus ruimte nodig heeft (zelfs al is die
+          uiteindelijk 0) dat onder onze floatende elementen komt en zo de
+          onderrand naar beneden duwt. Dat alles zonder onze HTML te vervuilen.
+          Met de clearfix klasse en deze CSS:
+        </p>
+        <pre><code>
+          .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+        </code></pre>
+      </main>
+    </article>
+  </body>
+</html>

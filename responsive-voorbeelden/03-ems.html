@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>em voorbeeld</title>
+    <style>
+      body {
+        font-size: 20px;
+      }
+      article {
+        font-size: 12px;
+      }
+      h1 {
+        font-size: 3em;
+      }
+      h2 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1em;
+      }
+      strong,
+      .one-and-a-half {
+        font-size: 1.5em;
+      }
+      .smalltitle {
+        font-size: 1.2em;
+      }
+      .twenty-em {
+        width: 20em;
+      }
+      .fourhundred-px {
+        width: 400px;
+      }
+      .sixhundred-px {
+        width: 600px;
+      }
+      .blue {
+        background-color: lightblue;
+      }
+      .green {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dit is een h1 van 3em <strong>en een strong van 1.5em.</strong></h1>
+    <h2>Dit is een h2 van 2em</h2>
+    <p>
+      Het body element heeft een font-size van 20px. Pargrafen waarvoor we geen
+      font-size opgeven erven die font-size (inheritance).
+    </p>
+    <p>
+      Dit is een paragraaf met <code>font-size: 1em;</code>
+      <strong
+        >En dit is een strong van 1.5em binnen diezelfde paragraaf.</strong
+      >
+    </p>
+    <p>
+      Je ziet hierboven dat em bij font-size de factor bepaalt waarmee je de de
+      font-size van het parent element moet vermenigvuldigen.
+    </p>
+    <article>
+      <h2>Article: h2 van 2em (hier 24px)</h2>
+      <p>
+        Voor article hebben we <code>font-size: 12px;</code> ingesteld. Dat
+        betekent dat een paragraaf hier een font-size van 12px erft
+        (inheritance) en dat een h2 van 2em hier 24px groot is (font-size van
+        het parent element vermenigvuldigd met een factor 2).
+      </p>
+    </article>
+    <h2>em’s voor andere maten dan font-size</h2>
+    <p>
+      Hieronder zie je dat em’s voor andere maten, zoals width de factor bepalen
+      waarmee je de font-size van het element zelf moet vermenigvuldigen.
+    </p>
+    <div class="twenty-em blue">20em</div>
+    <div class="fourhundred-px green">400px</div>
+    <div class="one-and-a-half twenty-em blue">20em; font-size:1.5em</div>
+    <div class="sixhundred-px green">600px</div>
+  </body>
+</html>

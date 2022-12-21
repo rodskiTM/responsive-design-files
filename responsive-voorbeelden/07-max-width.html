@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>max-width</title>
+    <style>
+      /* universal border-box per https://css-tricks.com/box-sizing/ */
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      /* image blocks zie uitleg in de tekst */
+      img {
+        display: block;
+      }
+
+      /* instellen van de breedtes */
+      .too-wide {
+        width: 2400px;
+      }
+      .onehundredpercent {
+        width: 100%;
+      }
+      .readable {
+        max-width: 50rem;
+        margin: 1rem auto;
+      }
+      .maxhundred {
+        max-width: 100%;
+      }
+
+      /* spacing */
+      img {
+        margin: 0 0 1rem 0;
+      }
+      article {
+        margin: 2rem 0;
+        padding: 1rem;
+      }
+      figure {
+        margin: 0 0 2rem 0;
+        padding: 0;
+      }
+
+      /* kleurtjes */
+      .aqua {
+        background-color: aqua;
+      }
+      .coral {
+        background-color: coral;
+      }
+      .lavender {
+        background-color: lavender;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>max-width</h1>
+    <p>Bekijk deze pagina ook zeker op verschillende breedtes.</p>
+    <article class="too-wide aqua">
+      <h2>Dit article is veel te breed voor de meeste viewports</h2>
+      <p>
+        Met een breedte van 2400px en de nodige marge en padding is dit article
+        echt veel te breed voor de meeste viewports
+      </p>
+      <figure class="wide-figure">
+        <img src="https://place-puppy.com/2000x1000" alt="puppy" />
+        <caption>
+          Deze image is 2000px breed. Ook dat is veel te breed voor de meeste
+          viewports.
+        </caption>
+      </figure>
+      <p>
+        Zelfs op een monitor die voldoende breed is, zijn dit veel te veel
+        tekens en woorden naast elkaar voor we een volgende lijn beginnen. De
+        optimale lijnlengte voor een goede leesbaarheid is tussen de 50 en 60
+        tekens per lijn. Tot 75 tekens is nog goed te doen. Alles daarboven is
+        teveel en is extra vermoeiend voor je lezer. Ik ben bijna zeker dat
+        niemand deze zin nog gelezen heeft bijv.
+      </p>
+      <p>
+        <cite
+          ><a href="https://baymard.com/blog/line-length-readability"
+            >Readability: The Optimal Line Length | Baynard Institute - Free UX
+            Research</a
+          ></cite
+        >
+      </p>
+    </article>
+    <article class="onehundredpercent coral">
+      <h2>width: 100%</h2>
+      <p>
+        Dit article en alle inhoud ervan is steeds 100%. Zij zullen zich dus
+        aanpassen aan de beschikbare breedte. Dit is al veel beter dan het
+        vorige article, toch zijn er nog problemen met de leesbaarheid van de
+        tekst als je bijv. een hele brede monitor hebt. (Test dit zeker een keer
+        uit.)
+      </p>
+      <figure class="onehundredpercent">
+        <img
+          class="onehundredpercent"
+          src="https://place-puppy.com/2000x1000"
+          alt="puppy"
+        />
+        <caption>
+          De image die we hier laden is nog steeds 2000px breed maar we stellen
+          de breedte via CSS in op 100%. Deze image neemt dus steeds de
+          volledige beschikbare breedte in.
+        </caption>
+      </figure>
+      <p>
+        Om dit te doen werken, moeten we onze images wel
+        <code>display: block;</code> meegeven en de breedte van 100% ook aan de
+        image zelf toekennen.
+      </p>
+      <figure class="onehundredpercent">
+        <img src="https://place-puppy.com/2000x1000" alt="puppy" />
+        <caption>
+          Hier laden we dezelfde image van 2000px breed. Omdat we vergeten de
+          image zelf een breedte van 100% te geven, past ze op de meeste
+          viewports niet in het parent element en hebben we dus een overflow.
+        </caption>
+      </figure>
+      <figure class="onehundredpercent">
+        <img
+          class="onehundredpercent"
+          src="https://placekitten.com/150/100"
+          alt="kitty"
+        />
+        <caption>
+          De image die we hier laden is slechts 150px breed maar we stellen de
+          breedte via CSS in op 100%. Deze image neemt dus steeds de volledige
+          beschikbare breedte in. Bedenk zelf even waarom dit nadelig is.
+        </caption>
+      </figure>
+    </article>
+    <article class="readable lavender">
+      <h2>max-width</h2>
+      <p>
+        Dit article heeft een maximale breedte van 45rem. Dat betekent dat als
+        er 45rem of meer ruimte is, de breedte 45rem zal zijn. Als er minder dan
+        45rem beschikbare ruimte is, zal dit article de volledige beschikbare
+        breedte innemen. Bij minder beschikbare ruimte dan we instellen met
+        max-width, behandelt de browser dit hetzelfde als wanneer we 100% zouden
+        instellen.
+      </p>
+      <p>
+        Waarom 45rem? Een breedte van tussen de 40rem en 50rem zal bij de meeste
+        lettertypes overeenkomen met 50 - 80 tekens, wat dus ideaal is voor de
+        readability. Deze lijn wordt dus op geen enkel scherm te lang om
+        aangenaam te kunnen lezen. Bovendien zal een gebruiker om dit article te
+        lezen nooit horizontaal moeten scrollen. Het beste van twee werelden
+        dus.
+      </p>
+      <figure>
+        <img
+          class="maxhundred"
+          src="https://place-puppy.com/2000x1000"
+          alt="puppy"
+        />
+        <caption>
+          De image die we hier laden is 2000px breed maar we stellen de breedte
+          via CSS in op maximaal 100%.
+        </caption>
+      </figure>
+      <figure>
+        <img
+          class="maxhundred"
+          src="https://placekitten.com/150/100"
+          alt="kitty"
+        />
+        <caption>
+          De image die we hier laden is slechts 150px breed maar we stellen de
+          breedte via CSS in op maximaal 100%. Deze image wordt nooit groter dan
+          voorzien in het beeldbestand, waardoor de kwaliteit behouden blijft.
+          Op een te smalle viewport zou deze image zich wel aanpassen.
+        </caption>
+      </figure>
+      <p>
+        Het is dus een goed idee om steeds de volgende regel in je CSS op te
+        nemen:
+      </p>
+      <pre><code>
+        img {
+            display: block;
+            max-width: 100%;
+        }
+      </code></pre>
+    </article>
+  </body>
+</html>
