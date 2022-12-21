@@ -8,97 +8,97 @@
     />
     <title>Vertical navbar</title>
     <style>
+      /* universal border-box per https://css-tricks.com/box-sizing/ */
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      /* font */
+      html {
+        font-size: 1.2em; /* beetje groter is wat moderner */
+      }
+
+      /* default styling */
       body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: auto;
+        margin: 0;
         background-color: #555;
         color: white;
         border-radius: 10px;
       }
-      .clearfix::before,
-      .clearfix::after {
-        content: " ";
-        display: table;
+
+      main {
+        max-width: 45rem;
+        margin: 2rem auto;
       }
 
-      .clearfix::after {
-        clear: both;
-      }
-
-      .active {
-        background-color: #4caf50;
-        color: white;
-      }
-
-      .topnav {
+      /* navbar styling */
+      .navbar {
         background-color: #333;
+        margin: 0;
+        padding: 0;
       }
 
-      .topnav a {
+      .navbar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .navbar li {
+        display: inline-block;
+      }
+
+      .navbar a {
         color: white;
-        padding: 1em 1em;
+        padding: 1rem;
         text-decoration: none;
       }
 
-      @media only screen and (max-width: 760px) {
-        .topnav #myLinks {
-          display: none;
-        }
-
-        .topnav a {
-          display: block;
-        }
-
-        .topnav a.icon {
-          background: black;
-          display: block;
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
-
-        .topnav a:hover {
-          background-color: #ddd;
-          color: black;
-        }
+      .navbar .active {
+        background-color: #4caf50;
       }
     </style>
   </head>
   <body>
     <!-- Top Navigation Menu -->
-    <div class="clearfix topnav">
-      <a href="#home" class="active logo">Logo</a>
-      <div id="myLinks">
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-      </div>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <nav class="navbar">
+      <ul id="myLinks">
+        <li><a href="#home" class="active">Logo</a></li>
+        <div class="toggle" id="hideLinks">
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+        </div>
+      </ul>
+      <a href="javascript:void(0);" class="" onclick="toggle('hideLinks')">
         <i class="fa fa-bars"></i>
       </a>
-    </div>
+    </nav>
 
-    <div class="clearfix">
+    <main>
       <h3>Vertical Mobile Navbar</h3>
       <p>
-        This example demonstrates how a navigation menu on a mobile/smart phone
+        This example demonstrates what a navigation menu on a mobile/smart phone
         could look like.
       </p>
       <p>
-        Click on the hamburger menu (three bars) in the top right corner, to
+        Click on the hamburger icon (three bars) in the top right corner, to
         toggle the menu.
       </p>
-    </div>
-
-    <!-- End smartphone / tablet look -->
+    </main>
 
     <script>
-      function myFunction() {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-          x.style.display = "none";
+      function toggle(el) {
+        var hide = document.getElementById("hideLinks");
+        if (hide.style.display === "block") {
+          hide.style.display = "none";
         } else {
-          x.style.display = "block";
+          hide.style.display = "block";
         }
       }
     </script>
