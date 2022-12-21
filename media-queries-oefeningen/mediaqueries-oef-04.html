@@ -18,6 +18,13 @@
         box-sizing: inherit;
       }
 
+      /* clearfix utility class */
+      .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
       /* font */
       html {
         font-size: 1.2em; /* beetje groter is wat moderner */
@@ -44,19 +51,24 @@
       }
 
       .navbar ul {
+        float: left;
         margin: 0;
         padding: 0;
         list-style: none;
       }
 
       .navbar li {
-        display: inline-block;
+        padding: 1rem;
       }
 
       .navbar a {
         color: white;
-        padding: 1rem;
         text-decoration: none;
+      }
+
+      .nav-icon {
+        float: right;
+        padding: 1rem;
       }
 
       .navbar .active {
@@ -66,16 +78,20 @@
   </head>
   <body>
     <!-- Top Navigation Menu -->
-    <nav class="navbar">
+    <nav class="navbar clearfix">
       <ul id="myLinks">
-        <li><a href="#home" class="active">Logo</a></li>
+        <li class="active"><a href="#home">Logo</a></li>
         <div class="toggle" id="hideLinks">
           <li><a href="#news">News</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#about">About</a></li>
         </div>
       </ul>
-      <a href="javascript:void(0);" class="" onclick="toggle('hideLinks')">
+      <a
+        href="javascript:void(0);"
+        class="nav-icon"
+        onclick="toggle('hideLinks')"
+      >
         <i class="fa fa-bars"></i>
       </a>
     </nav>
