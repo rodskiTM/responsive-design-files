@@ -74,13 +74,34 @@
       .navbar .active {
         background-color: #4caf50;
       }
+
+      /* mobile view */
+      .toggle {
+        display: none;
+      }
+
+      @media screen and (min-width: 760px) {
+        .nav-icon {
+          display: none;
+        }
+        .logo {
+          float: left;
+        }
+        .toggle {
+          display: block;
+          float: left;
+        }
+        .navbar li {
+          display: inline-block;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- Top Navigation Menu -->
     <nav class="navbar clearfix">
       <ul id="myLinks">
-        <li class="active"><a href="#home">Logo</a></li>
+        <li class="active logo"><a href="#home">Logo</a></li>
         <div class="toggle" id="hideLinks">
           <li><a href="#news">News</a></li>
           <li><a href="#contact">Contact</a></li>
