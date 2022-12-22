@@ -1,40 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Three Column Layout</title>
+    <title>Four Column Layout</title>
     <style type="text/css">
-      h3 {
-        width: 100%;
-      }
       body {
-        width: 100%;
         font-family: Arial, Verdana, sans-serif;
         color: #665544;
       }
+
       .column1of4,
       .column2of4,
       .column3of4,
       .column4of4 {
-        width: 22%;
         float: left;
-        margin: 1.5%;
-        box-sizing: border-box;
-      }
-      .clearfix::before,
-      .clearfix::after {
-        content: " ";
-        display: table;
-      }
-
-      .clearfix::after {
-        clear: both;
+        width: 22%;
       }
     </style>
   </head>
   <body>
     <h1>The Evolution of the Bicycle</h1>
-    <div class="column1of4">
-      <h3>The First Bicycle</h3>
+    <section class="column1of4">
+      <h2>The First Bicycle</h2>
       <p>
         In 1817 Baron von Drais invented a walking machine that would help him
         get around the royal gardens faster: two same-size in-line wheels, the
@@ -48,9 +34,9 @@
         not being practical for transportation in any other place than a well
         maintained pathway such as in a park or garden.
       </p>
-    </div>
-    <div class="column2of4">
-      <h3>Further Innovations</h3>
+    </section>
+    <section class="column2of4">
+      <h2>Further Innovations</h2>
       <p>
         The next appearance of a two-wheeled riding machine was in 1865, when
         pedals were applied directly to the front wheel. This machine was known
@@ -68,9 +54,9 @@
         long spokes of the large front wheel provided a much smoother ride than
         its predecessor.
       </p>
-    </div>
-    <div class="column3of4">
-      <h3>Bicycle Timeline</h3>
+    </section>
+    <section class="column3of4">
+      <h2>Bicycle Timeline</h2>
       <ul>
         <li>1817: Draisienne</li>
         <li>1865: Velocipede</li>
@@ -79,9 +65,9 @@
         <li>1885: Hard-tired safety</li>
         <li>1888: Pneumatic safety</li>
       </ul>
-    </div>
-    <div class="column4of4">
-      <h3>The First Bicycle</h3>
+    </section>
+    <section class="column4of4">
+      <h2>The First Bicycle</h2>
       <p>
         In 1817 Baron von Drais invented a walking machine that would help him
         get around the royal gardens faster: two same-size in-line wheels, the
@@ -95,6 +81,6 @@
         not being practical for transportation in any other place than a well
         maintained pathway such as in a park or garden.
       </p>
-    </div>
+    </section>
   </body>
 </html>
