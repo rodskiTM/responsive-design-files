@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Responsive Design 101</title>
+    <style>
+      /* Mobile first */
+      main {
+        background-color: #f0f8ff; /* een lichte blauwe kleur */
+        width: 100%;
+      }
+
+      aside {
+        background-color: #f0fff0; /* een lichte groene kleur */
+        width: 100%;
+      }
+
+      /* Mediaquery voor grotere schermen */
+      @media screen and (min-width: 600px) {
+        main {
+          float: left;
+          width: 70%;
+        }
+        aside {
+          float: right;
+          width: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Welkom bij de Geschiedenis van Computers</h1>
+      <p>
+        De eerste computers waren zo groot als een kamer! Kun je dat geloven?
+      </p>
+      <!-- Voeg meer boeiende inhoud hier toe -->
+    </main>
+    <aside>
+      <h2>Wist je dat?</h2>
+      <p>De eerste computerbug was een echte mot die vastzat in de machine!</p>
+      <!-- Nog meer leuke feitjes hier -->
+    </aside>
+  </body>
+</html>
