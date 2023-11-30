@@ -18,7 +18,7 @@
         box-sizing: inherit;
       }
 
-      /* clearfix utility class */
+      /* modern clearfix utility class */
       .clearfix:after {
         content: "";
         display: table;
@@ -50,15 +50,21 @@
         padding: 0;
       }
 
-      .navbar ul {
+      .navbar .logo {
+        display: block;
         float: left;
+      }
+
+      .navbar ul {
         margin: 0;
         padding: 0;
         list-style: none;
       }
 
-      .navbar li {
+      .navbar li,
+      .navbar .logo {
         padding: 1rem;
+        min-width: 5.2rem; /* this is trial and error to have a consistent width for the active class */
       }
 
       .navbar a {
@@ -74,23 +80,31 @@
       .navbar .active {
         background-color: #4caf50;
       }
+
+      /* mobile view */
+      .toggle {
+        display: none;
+        position: absolute; /* over the page content instead of pushing it downwards */
+        top: 3.15rem; /* underneath the logo instead of on top of it */
+        width: 100%; /* full width menu */
+        text-align: right;
+        background-color: #333; /* background color for the toggle block */
+      }
     </style>
   </head>
   <body>
     <!-- Top Navigation Menu -->
     <nav class="navbar clearfix">
-      <ul id="myLinks">
-        <li class="active logo"><a href="#home">Logo</a></li>
-        <div class="toggle" id="hideLinks">
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About</a></li>
-        </div>
+      <a class="active logo" href="#home">Logo</a>
+      <ul class="toggle" id="myLinks">
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
       </ul>
       <a
         href="javascript:void(0);"
         class="nav-icon"
-        onclick="toggle('hideLinks')"
+        onclick="toggle('myLinks')"
       >
         <i class="fa fa-bars"></i>
       </a>
@@ -109,14 +123,26 @@
     </main>
 
     <script>
+      // This script toggles the visibility of the element with the id el
+      // put this in the onclick property of a link or button.
       function toggle(el) {
-        var hide = document.getElementById("hideLinks");
+        var hide = document.getElementById(el);
         if (hide.style.display === "block") {
           hide.style.display = "none";
         } else {
           hide.style.display = "block";
         }
       }
+
+      // Luister naar schermgrootte veranderingen
+      window.onresize = function () {
+        var hide = document.getElementById("myLinks");
+        if (window.innerWidth >= 760) {
+          hide.style.display = "block"; // Zorg ervoor dat de links worden getoond op grotere schermen
+        } else {
+          hide.style.display = "none"; // Verberg links op kleinere schermen
+        }
+      };
     </script>
   </body>
 </html>
