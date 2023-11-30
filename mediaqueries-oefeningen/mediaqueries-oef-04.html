@@ -89,7 +89,7 @@
           display: none;
         }
         .toggle {
-          display: flex; /* because no breaks, no height difference, no shit; stolen from bootstrap */
+          display: block;
         }
         .navbar li {
           float: left;
@@ -133,13 +133,23 @@
       // This script toggles the visibility of the element with the id el
       // put this in the onclick property of a link or button.
       function toggle(el) {
-        var hide = document.getElementById("hideLinks");
+        var hide = document.getElementById(el);
         if (hide.style.display === "block") {
           hide.style.display = "none";
         } else {
           hide.style.display = "block";
         }
       }
+
+      // Luister naar schermgrootte veranderingen
+      window.onresize = function () {
+        var hide = document.getElementById("hideLinks");
+        if (window.innerWidth >= 760) {
+          hide.style.display = "block"; // Zorg ervoor dat de links worden getoond op grotere schermen
+        } else {
+          hide.style.display = "none"; // Verberg links op kleinere schermen
+        }
+      };
     </script>
   </body>
 </html>
