@@ -4,6 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Parent Float - Solution</title>
     <style type="text/css">
+      /* modern clearfix utility class */
+      .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
       body {
         width: 90%;
         font-family: Arial, Verdana, sans-serif;
@@ -25,14 +32,6 @@
         p {
           width: 30%;
           float: left;
-        }
-        .clearfix::before,
-        .clearfix::after {
-          content: " ";
-          display: table;
-        }
-        .clearfix::after {
-          clear: both;
         }
       }
     </style>
