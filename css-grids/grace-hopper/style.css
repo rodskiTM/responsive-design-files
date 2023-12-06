@@ -23,8 +23,8 @@ body {
   background-color: #1b1b1b;
   grid-template-areas:
     "header"
-    "main"
     "nav"
+    "main"
     "aside"
     "footer";
   grid-template-columns: 1fr;
@@ -110,7 +110,6 @@ footer {
   main > blockquote {
     grid-column: 2;
     border: 0.5em groove #d4af37;
-    padding: 0.5em;
   }
   aside {
     align-self: start;
