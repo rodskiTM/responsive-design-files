@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grace Hopper - Vrouwen in de Geschiedenis van Programmeren</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono|Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* universal border-box */
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      /* img */
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      body {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1em;
+        font-family: "Orbitron", sans-serif;
+        color: #d3d3d3; /* Zilverachtige tekstkleur */
+        background-color: #1b1b1b; /* Donkere achtergrond */
+        grid-template-areas:
+          "header"
+          "main"
+          "nav"
+          "aside"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+
+      a {
+        color: #d4af37; /* Gouden linkkleur */
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        grid-area: header;
+        background-color: #3a3a3a; /* Muted dark gray */
+        text-align: center;
+        padding: 10px;
+        font-family: "Orbitron", sans-serif;
+        border: 3px solid #d4af37; /* Gouden rand */
+      }
+
+      nav,
+      aside {
+        background-color: #252525; /* Zachtere grijstint */
+        padding: 10px;
+        border: 2px solid #c0c0c0; /* Zilveren rand */
+      }
+
+      nav {
+        grid-area: nav;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 1em 0;
+      }
+
+      nav ul {
+        margin: 0;
+      }
+      main {
+        grid-area: main;
+      }
+
+      aside {
+        grid-area: aside;
+      }
+
+      figure {
+        margin: 1em 0;
+      }
+
+      footer {
+        grid-area: footer;
+        text-align: right;
+        padding: 10px;
+        color: #c0c0c0; /* Zilverachtige tekstkleur */
+      }
+
+      /* Responsiviteit */
+      @media screen and (min-width: 900px) {
+        body {
+          display: grid;
+          grid-template-areas:
+            "header header header"
+            "nav main aside"
+            "footer footer footer";
+          grid-template-columns: 1fr 3fr 1fr;
+          grid-template-rows: auto;
+          gap: 10px;
+        }
+        main {
+          grid-area: main;
+          display: grid;
+          grid-template-columns: 1fr 3fr 1fr;
+          grid-template-rows: auto;
+        }
+        main > p {
+          grid-column: 1 / span 5;
+        }
+        main > blockquote {
+          grid-column: 2;
+          border: 0.5em groove #d4af37;
+          padding: 0.5em;
+        }
+        aside {
+          align-self: start;
+        }
+        figure {
+          grid-column: 1;
+          margin: 0 1em 0 0;
+        }
+        .fourfifths {
+          grid-column: 2 / span 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Grace Hopper</h1>
+    </header>
+    <nav>
+      <h2>Inhoud</h2>
+      <ul>
+        <li><a href="ada-lovelace.html">Ada Lovelace</a></li>
+        <li><a href="hedy-lamarr.html">Hedy Lamarr</a></li>
+        <li><a href="roberta-williams.html">Roberta Williams</a></li>
+        <li><a href="carol-shaw.html">Carol Shaw</a></li>
+        <li><a href="dorothy-vaughan.html">Dorothy Vaughan</a></li>
+        <li><a href="mary-allen-wilkes.html">Mary Allen Wilkes</a></li>
+      </ul>
+    </nav>
+    <main>
+      <figure>
+        <img src="grace-hopper.jpg" alt="Grace Hopper" />
+        <figcaption>Grace Hopper &copy; Wikimedia</figcaption>
+      </figure>
+      <p class="fourfifths">
+        Grace Hopper was een vooraanstaande computerwetenschapper en een
+        achter-admiraal in de Amerikaanse marine. Geboren in 1906 in New York
+        City, toonde ze al op jonge leeftijd een fascinatie voor techniek en
+        wiskunde. Na haar afstuderen aan het Vassar College en het behalen van
+        haar Ph.D. in wiskunde aan Yale University, begon Hopper haar carrière
+        als universitair docent. Haar leven nam echter een andere wending
+        tijdens de Tweede Wereldoorlog, toen ze zich aansloot bij de Amerikaanse
+        marine.
+      </p>
+
+      <p>
+        In de marine werd Hopper toegewezen aan het Bureau of Ordnance
+        Computation Project aan Harvard University, waar ze werkte aan de Mark
+        I, een van de eerste programmeerbare computers. Tijdens haar werk met de
+        Mark I realiseerde ze zich het potentieel van computers om verder te
+        gaan dan louter numerieke berekeningen. Haar visie op programmeertalen
+        die geschreven waren in Engels, in plaats van in machinetaal, was
+        revolutionair en legde de basis voor de ontwikkeling van
+        gebruikersvriendelijke programmeertalen.
+      </p>
+
+      <blockquote>
+        "Een schip in de haven is veilig, maar dat is niet waarvoor schepen
+        gebouwd zijn."
+      </blockquote>
+
+      <p>
+        Hopper was ook een pionier in het concept van machine-onafhankelijke
+        programmeertalen, wat leidde tot de ontwikkeling van COBOL, een van de
+        eerste hoog-niveau programmeertalen. Ze stond erop dat een
+        programmeertaal begrijpelijk moest zijn voor zowel de computer als de
+        gemiddelde persoon. Dit idee was destijds radicaal, maar het bleek een
+        cruciale stap in het toegankelijker maken van computerprogrammering voor
+        een breder publiek.
+      </p>
+
+      <p>
+        Naast haar technische bijdragen was Hopper bekend om haar vermogen om
+        complexe concepten op een duidelijke en begrijpelijke manier uit te
+        leggen. Ze was een veelgevraagd spreker en stond bekend om haar gevoel
+        voor humor en haar vermogen om mensen te inspireren. Grace Hopper's
+        nalatenschap is niet alleen haar werk in de computerwetenschappen, maar
+        ook haar rol als mentor en inspiratiebron voor jonge wetenschappers en
+        ingenieurs. Haar uitspraak, "Het is makkelijker om om vergiffenis te
+        vragen dan om toestemming te krijgen," blijft een inspirerend motto voor
+        innovators en pioniers.
+      </p>
+    </main>
+    <aside>
+      <h2>Meer weten</h2>
+      <ul>
+        <li>
+          <a href="https://nl.wikipedia.org/wiki/Grace_Hopper"
+            >Grace Hopper op Wikipedia</a
+          >
+        </li>
+        <li>
+          <a href="https://president.yale.edu/biography-grace-murray-hopper"
+            >Grace Hopper | Yale University</a
+          >
+        </li>
+      </ul>
+    </aside>
+    <footer>
+      <p>&copy; 2023 Thomas More</p>
+    </footer>
+  </body>
+</html>
