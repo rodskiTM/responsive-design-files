@@ -1,0 +1,66 @@
+/* universal border-box */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* best for images */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+  font-family: "Orbitron", sans-serif;
+  color: #d3d3d3;
+  background-color: #1b1b1b;
+}
+
+a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: #3a3a3a;
+  text-align: center;
+  padding: 10px;
+  font-family: "Orbitron", sans-serif;
+  border: 3px solid #d4af37;
+}
+
+nav,
+aside {
+  background-color: #252525;
+  padding: 10px;
+  border: 2px solid #c0c0c0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 1em 0;
+}
+
+nav ul {
+  margin: 0;
+}
+
+figure {
+  margin: 1em 0;
+}
+
+footer {
+  text-align: right;
+  padding: 10px;
+  color: #c0c0c0;
+}
